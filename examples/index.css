@@ -1,0 +1,63 @@
+
+table.super-table th.sortable {
+	cursor: pointer;
+	margin-right: 20px;
+}
+
+table.super-table tbody{
+	
+}
+
+table.super-table th{
+	text-align: left;
+}
+
+
+table.super-table th.sorted0::after {
+	content: "\25B2";
+}
+
+table.super-table th.sorted1::after {
+	content: "\25BC";
+}
+
+table.super-table .not-sorted::after {
+	content: "\0020";
+}
+
+table.super-table .not-sorted::after,  table.super-table .sorted0::after , table.super-table th.sorted1::after{
+	color: gray; 
+	font-size: x-small;
+	display: inline-block;
+	width: 27px;
+	text-align: center;
+}
+
+table.super-table tbody {
+	overflow-y: auto;
+	position: absolute;
+	height: 800px;
+}
+
+table.super-table td, table.super-table th {
+	border-bottom: 1px solid #ccc;
+	padding: .5em;
+}
+
+table.super-table {
+	border-collapse:collapse;
+	min-height: 2em;
+}
+
+table.super-table tbody tr:hover{
+	background-color: #ccc;
+}
+
+ .spinner {
+	position: absolute;
+	top: 49%;
+	left: 49%;
+	width: 20px;
+	height: 20px;
+	background-image: url("spinner.gif");
+}

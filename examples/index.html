@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test page</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body style="margin: 30px 150px; ">
+
+<div class="tablex"  style="overflow: scroll; height: 500px;">
+</div>
+
+<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="../src/maxtable.js"></script>
+<script type="text/javascript">
+
+var config = {
+	data: testData1,
+	key: 'id',
+	columns: [{
+		label: 'First Name',
+		field: 'first_name',
+		type: 'string',
+		width: 125,
+		cls: 'name',
+		sortable: true,
+		filterbale: true
+	},{
+		label: 'last Name',
+		field: 'last_name',
+		type: 'string',
+		width: 125,
+		cls: 'name',
+		sortable: true,
+		filterbale: true
+	}, {
+		label: 'Email',
+		field: 'email',
+		type: 'string',
+		width: 260,
+		cls: 'email'
+	}, {
+		label: 'country',
+		field: 'country',
+		type: 'string',
+		width: 150,
+		cls: 'country',
+		sortable: true,
+		filterbale: true,
+		render: function(d) {
+			return '<span style="color: red;"> ' +  d + '</span>'
+		}
+	},{
+		label: 'Age',
+		field: 'age',
+		type: 'int',
+		width: 40,
+		cls: 'age',
+		sortable: true,
+		filterbale: true,
+		render: function(d) {
+			return '<span style="color: red;"> ' +  d + 'years.</span>'
+		}
+	}]
+};
+
+	console.log('Row Count:', config.data.length); 
+	$('.tablex').maxtable(config);
+</script>
+</body>
+</html>
