@@ -57,10 +57,11 @@ THE SOFTWARE.
 	}
 
 	function clickHandler(me, e, config) {
+		var startTime = new Date(), timetaken;
 		var type = e.target.tagName;
 		switch (type) {
 			case 'TH':
-				var startTime = new Date();
+				
 				var field = $(e.target).data('field'),
 					sortable = $(e.target).data('sortable'),
 					sortDataType = $(e.target).data('type');
@@ -104,11 +105,14 @@ THE SOFTWARE.
 					return (config.sortDir? retval * -1 : retval);
 				});
 
+				timetaken = Math.abs(new Date() - startTime);
+				console.log('timetaken to sort: ', timetaken , ' for ', config.data.length);
+				
 				draw(me, config);
 
-				var timetaken = Math.abs(new Date() - startTime);
+				timetaken = Math.abs(new Date() - startTime);
 
-				console.log('timetaken: ', timetaken);
+				console.log('timetaken: ', timetaken , ' for ', config.data.length);
 
 				break;
 			case 'TD':
